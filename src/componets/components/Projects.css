@@ -1,0 +1,370 @@
+:root {
+  --projectWidth: 150px;
+  --cardsPosition: 35vw;
+  -webkit-tap-highlight-color: transparent;
+}
+.projectsContainer {
+  height: 100dvh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  animation: fadeIn 400ms ease-in;
+  box-sizing: border-box;
+}
+.project > img,
+.projectExpanded > img {
+  transform: translate(-50%) scale(1.1);
+  margin-left: 50%;
+  max-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  filter: brightness(0.8);
+  box-sizing: border-box;
+  max-width: none;
+}
+.project {
+  width: var(--projectWidth);
+  /* for size of cards */
+  height: 50px; 
+  overflow: hidden;
+  position: absolute;
+  border-radius: 20px;
+  /* for positon from top  */
+  top: 80px; 
+  transform: translate(50%);
+  right: var(--cardsPosition);
+  border: 1px solid rgba(255, 255, 255, 0.175);
+  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.292);
+  transition: 1s cubic-bezier(0.77, 0, 0.175, 1), 0s z-index, 0s box-shadow;
+  z-index: 4;
+  cursor: pointer;
+}
+.projectnotMoving {
+  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.292) !important;
+}
+.projectExpanded {
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  border: 0px solid transparent;
+  cursor: auto;
+  right: 50%;
+}
+
+.projectControlls {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 5;
+  height: 80px;
+  pointer-events: none;
+}
+.projectContentContainer {
+  margin-top: 80px;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  color: white;
+  box-sizing: border-box;
+}
+
+.controllsBtn {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3em;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.066);
+  padding: 0px;
+  margin: 15px 10px;
+  border: 1px solid white;
+  transition: 300ms ease-in-out;
+}
+.controllsBtn i {
+  line-height: 1.3em;
+}
+.controllsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  transform: translate(100%);
+  right: calc(var(--cardsPosition) + 65px);
+  width: calc(var(--cardsPosition) + 65px);
+  pointer-events: all;
+}
+.controllButtons {
+  display: flex;
+}
+.progressContainer {
+  width: 100%;
+  position: relative;
+}
+.track {
+  width: 100%;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.526);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.progress {
+  width: 0%;
+  height: 100%;
+  background-color: rgb(240, 114, 11);
+  transition: 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+.currentNumber {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  width: 45px;
+  height: 45px;
+  margin: 15px;
+  user-select: none;
+  color: rgba(255, 255, 255, 0.728);
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.projectTitle-small {
+  position: absolute;
+  bottom: calc(0% + 80px);
+  padding: 10px;
+  font-size: 1.3em;
+  font-weight: 500;
+  transition: 1s cubic-bezier(0.77, 0, 0.175, 1);
+  transition-delay: -100ms;
+}
+.projectTitle-expanded {
+  font-size: 3em;
+  bottom: 85%;
+  padding-left: 30px;
+  transition-delay: 100ms;
+}
+
+.content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 58%;
+  max-width: 1000px;
+  top: 16%;
+  padding: 0 30px;
+  max-height: calc(84% - 100px);
+  box-sizing: border-box;
+}
+.line {
+  width: 0%;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.521);
+  border-radius: 4px;
+  opacity: 0;
+  transition: 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+  transition-delay: -0.3s;
+}
+.lineExpanded {
+  width: 90%;
+  transition-delay: 0.8s;
+  opacity: 1;
+}
+.about {
+  text-align: left;
+  margin-top: 20px;
+  padding-right: 10px;
+  font-size: 1.5em;
+  letter-spacing: 1px;
+  opacity: 0;
+  overflow-y: auto;
+  transition: 0.1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+.aboutExpanded {
+  transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition-delay: 0.9s;
+  opacity: 1;
+  overflow-y: auto;
+}
+.about::-webkit-scrollbar,
+.imageSlider::-webkit-scrollbar {
+  background-color: transparent;
+  width: 3px;
+  height: 3px;
+  display: none;
+}
+.about::-webkit-scrollbar-thumb,
+.imageSlider::-webkit-scrollbar-thumb {
+  background-color: rgba(237, 36, 36, 0.244);
+}
+about::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+.projectButtons {
+  pointer-events: none;
+  display: flex;
+  padding-top: 20px;
+  opacity: 0;
+  transition: 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+  transition-delay: -0.3s;
+}
+.projectButton {
+  font-size: 1.1em;
+  padding: 9px 17px;
+  border: 1px solid white;
+  border-radius: 60px;
+  margin-right: 10px;
+  font-weight: 600;
+  user-select: none;
+  transition: 300ms ease-in-out;
+}
+
+.tryIt {
+  padding: 9px 18px;
+  border: none;
+  background-color: #a0c0ff;
+  background-color: rgb(248, 172, 50);
+  color: rgb(47, 44, 44);
+  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.04);
+}
+.gitbtn {
+  display: flex;
+}
+.gitlogo {
+  padding-left: 15px;
+}
+.projectButtonsExpanded {
+  pointer-events: all;
+  opacity: 1;
+  transition: 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+  transition-delay: 0.9s;
+}
+.projectBackground {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(44, 44, 44);
+}
+.blob {
+  height: 50%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.376);
+  position: absolute;
+  filter: blur(100px);
+}
+.blob1 {
+  top: 10%;
+  background-color: rgba(255, 28, 28, 0.376);
+}
+.blob2 {
+  top: 30%;
+  left: 30%;
+  background-color: rgba(255, 28, 210, 0.376);
+}
+.blob3 {
+  top: 60%;
+  left: 10%;
+  background-color: rgba(28, 176, 255, 0.376);
+}
+.m-shadow {
+  box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.292);
+}
+
+.imageSlider {
+  display: flex;
+  gap: 7px;
+  width: 100%;
+  overflow-x: auto;
+  padding: 5px 0;
+  margin-bottom: 20px;
+}
+.imageContainer-slider {
+  min-width: 50px;
+  width: 50px;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.3s ease;
+  cursor: pointer;
+  border: 2px solid #f5f5f523;
+}
+
+.imageContainerMax-slider {
+  cursor: auto;
+  flex-shrink: 0;
+  width: 100%;
+}
+.imageContainer-slider > img {
+  transform: translate(-50%);
+  height: 100%;
+  margin-left: 50%;
+  max-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+}
+
+@media (hover: hover) {
+  .controllsBtn:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.204);
+  }
+  .projectButton:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.204);
+  }
+  .tryIt:hover {
+    background-color: white !important;
+    color: black !important;
+  }
+}
+
+  :root {
+    --projectWidth: 210px;
+    --cardsPosition: 50vw;
+  }
+  .project {
+    width: var(--projectWidth);
+    height: 50px;
+    border: 3px solid rgba(255, 255, 255, 0.588);
+  }
+  .projectExpanded {
+    width: 100%;
+    height: 100%;
+    border: 0px solid rgba(255, 255, 255, 0);
+  }
+  .projectTitle-small {
+    transform: translate(-50%);
+    left: 50%;
+    white-space: nowrap;
+    
+  }
+  .projectTitle-expanded {
+    bottom: calc(100% - 80px);
+    transform: translate(0%);
+    left: 0%;
+  }
+  .content {
+    top: calc(1% + 80px);
+    width: 100%;
+    max-height: calc(84% - 200px);
+    padding: 0 5px 0 30px;
+  }
+  .aboutExpanded {
+    padding-right: 25px;
+  }
+  .m-shadow {
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.292) !important;
+  }
+
+@media only screen and (max-height: 750px) and (max-width: 700px) {
+  .about {
+    font-size: 1.3em;
+  }
+}
+
+
