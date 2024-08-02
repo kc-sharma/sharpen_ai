@@ -4,7 +4,7 @@ import Image from './background.png'
 export default function Projects() {
   const [projects, setProjects] = useState([
     {
-      name: "What Does it Do?",
+      name: "plac holder2?",
       id: "what to do",
       imageUrl: Image,
       order: 0,
@@ -87,7 +87,7 @@ export default function Projects() {
       screenshots: [],
     },
     {
-      name: "What Does it Do",
+      name: "plac holder",
       id: "whattodo",
       imageUrl: Image,
       order: 5,
