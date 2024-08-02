@@ -5,7 +5,7 @@ export default function Projects() {
   const [projects, setProjects] = useState([
     {
       name: "What Does it Do?",
-      id: "syncit",
+      id: "what to do",
       imageUrl: Image,
       order: 0,
       currentPosition: 0,
@@ -22,7 +22,7 @@ export default function Projects() {
     },
     {
       name: "How It Works?",
-      id: "daytracker",
+      id: "howitwork",
       imageUrl:
         Image,
       order: 1,
@@ -40,7 +40,7 @@ export default function Projects() {
 
     {
       name: "Common Questions",
-      id: "greatsage",
+      id: "commonques",
       imageUrl: Image,
       order: 2,
       currentPosition: 2,
@@ -56,7 +56,7 @@ export default function Projects() {
     },
     {
       name: "Trusted & Secure",
-      id: "quizzical",
+      id: "trusetedsecure",
       imageUrl: Image,
       order: 3,
       currentPosition: 3,
@@ -72,7 +72,7 @@ export default function Projects() {
     },
     {
       name: "What Does it Do",
-      id: "rshadows",
+      id: "whatdoesit",
       imageUrl: Image,
       order: 4,
       currentPosition: 4,
@@ -260,7 +260,7 @@ function Project({
             left: `${
               properties.currentPosition == 0
                 ? "50%"
-                : `calc(25% + ${
+                : `calc(15% + ${
                     (properties.currentPosition - 1) * (width + 20)
                   }px)`
             }`,
