@@ -182,10 +182,10 @@ function Project({
         .getPropertyValue("--projectWidth")
         .split("px")[0]
     );
-    // let position =
-    //   getComputedStyle(document.documentElement)
-    //     .getPropertyValue("--cardsPosition")
-    //     .split("vw")[0] + "%";
+    let position =
+      getComputedStyle(document.documentElement)
+        .getPropertyValue("--cardsPosition")
+        .split("vw")[0] + "%";
     
 
     if (properties.currentPosition == 0) {
@@ -266,7 +266,8 @@ function Project({
             }`,
             transform: `translateX(${
               properties.currentPosition == 0 ? "-50%" : "0"
-            })`,
+            })`,
+            margin: "0px 0px", // Added margin
           },
         };
       });
