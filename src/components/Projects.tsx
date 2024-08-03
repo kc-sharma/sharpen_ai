@@ -257,7 +257,7 @@ function Project({
           ...styles,
           [properties.order]: {
             ...styles[properties.order],
-            left: `${
+          left: `${
               properties.currentPosition == 0
                 ? "50%"
                 : `calc(15% + ${
@@ -266,8 +266,7 @@ function Project({
             }`,
             transform: `translateX(${
               properties.currentPosition == 0 ? "-50%" : "0"
-            })`,
-            margin: "0px 0px", // Added margin
+            })`, 
           },
         };
       });
