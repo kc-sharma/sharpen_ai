@@ -32,7 +32,7 @@
   position: absolute;
   border-radius: 20px;
   /* for positon from top  */
-  top: 80px; 
+  top: 0px; 
   transform: translate(50%);
   right: var(--cardsPosition);
   border: 1px solid rgba(255, 255, 255, 0.175);
