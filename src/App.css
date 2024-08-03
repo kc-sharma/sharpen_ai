@@ -1,7 +1,4 @@
-a {
-  text-decoration: none;
-  color: white;
-}
-*{
-  line-height: 1.2;
+:root{
+  opacity: var(--sds-size-stroke-border);
+  background: linear-gradient(124deg, #0098E1 7.67%, #006DA2 59.46%, #00537B 92.33%);
 }
