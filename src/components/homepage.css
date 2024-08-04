@@ -50,3 +50,11 @@
     top: 0px;
     width: 100%; /* Ensure it spans the full width */
 }
+
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height */
+    padding-top: 100px; /* Adjust padding for navbar height */
+}

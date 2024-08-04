@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './homepage.css';
 import HowItWorks from './information/howitworks';  // Import the HowItWorks component
+import WhatDoesItDo from './information/whatdoesitdo'; // Import the WhatDoesItDo component
 
 type ActiveComponent = 'whatDoesItDo' | 'howItWorks' | 'whoIsSharpenFor' | 'trustedAndSecure' | 'commonQuestions' | null;
 
@@ -9,6 +10,8 @@ const HomePage: React.FC = () => {
 
     const renderComponent = () => {
         switch (activeComponent) {
+            case 'whatDoesItDo':
+                return <WhatDoesItDo />;
             case 'howItWorks':
                 return <HowItWorks />;
             // Add more cases here for other components

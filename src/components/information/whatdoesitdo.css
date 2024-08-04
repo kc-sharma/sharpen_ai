@@ -1,0 +1,47 @@
+.what-does-it-do {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: 8px;
+    width: 80%; /* Adjust width as needed */
+    max-width: 800px; /* Optional max-width for better responsiveness */
+    margin: auto; /* Center horizontally */
+    text-align: left;
+}
+
+.content {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.crossed {
+    text-decoration: line-through;
+
+
+}
+
+.content h2 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.content p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.image-container {
+    flex: 1;
+    text-align: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    border-radius: 8px;
+}
